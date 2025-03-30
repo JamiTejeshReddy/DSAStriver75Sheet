@@ -6,7 +6,22 @@ You can return the answer in any order.
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         //return bruteForce(nums,target);
+        //return newArrayApproach(nums,target);
 
+
+    }
+// This approach we are using Hashmap so we are only iterating once and using space as advantage
+//Time and space conmplexity is O(n) and O(n) respectively
+    public int[] newArrayApproach(int []nums, int target){
+        Map<Integer,Integer> complimentKeyIndexValMap = new HashMap();
+        for(int i=0;i<nums.length;i++){
+            if(complimentKeyIndexValMap.containsKey(nums[i])){
+                return new int[]{i,complimentKeyIndexValMap.get(nums[i])};
+            }else{
+                complimentKeyIndexValMap.put(target-nums[i],i);
+            }
+            
+        }return new int[]{};
     }
     // This is a bruteForce approach and time complexity is O(n*n)
     public int[] bruteForce(int[] nums, int target) {
