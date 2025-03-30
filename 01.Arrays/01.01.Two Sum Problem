@@ -34,3 +34,6 @@ class Solution {
         }return new int[]{};
     }
 }
+The main catch in this problem is 
+1. While we are iterating through the array we need to know whether the compliment of the i th element is present in the array or not if present what is its position
+2. so we are using hashmapto store all the i th element as key and its position as value and while iterating we check whether its compliemt is present if yes then we return the new array of i and the value of its complement in the map
