@@ -1,0 +1,13 @@
+// Here we iterate each element and store the max of element and cumSum+element as cumSum
+// we store the maxSum as max of cumSUm and maxSuym and return the maxSum
+public int maxSubArray(int[] nums) {
+        int maxSum = nums[0];
+        int cumSum = nums[0];
+        
+        for (int i = 1; i < nums.length; i++) {
+            cumSum = Math.max(nums[i], cumSum + nums[i]);
+            maxSum = Math.max(maxSum, cumSum);
+        }
+        
+        return maxSum;
+    }
